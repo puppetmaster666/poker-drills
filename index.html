@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Poker Drills</title>
+<meta name="theme-color" content="#0d1512">
+<meta name="description" content="Preflop, pot odds and equity drills built from your own hands.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Drills">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- HOME -->
+  <section class="screen" id="s-home">
+    <header class="top">
+      <div>
+        <div class="eyebrow">Poker Drills</div>
+        <h1>Train the spots<br>you play every day.</h1>
+      </div>
+    </header>
+    <div class="today" id="today"></div>
+    <div class="install" id="install" hidden></div>
+    <div class="section-title">Preflop</div>
+    <div class="drills" id="drills-pre"></div>
+    <div class="section-title">Math</div>
+    <div class="drills" id="drills-math"></div>
+    <div class="section-title">From your tables</div>
+    <div class="drills" id="drills-mine"></div>
+  </section>
+
+  <!-- DRILL -->
+  <section class="screen" id="s-drill" hidden>
+    <div class="drill-bar">
+      <button class="icon-btn" id="d-back" type="button" aria-label="Back to drills">‹</button>
+      <div class="drill-title" id="d-title"></div>
+      <div class="drill-score" id="d-score"></div>
+    </div>
+    <div class="chips" id="d-focus"></div>
+    <div class="stage">
+      <div class="seats" id="d-seats"></div>
+      <p class="situation" id="d-text"></p>
+      <div class="hand" id="d-cards"></div>
+      <div class="board" id="d-board"></div>
+    </div>
+    <div class="answers" id="d-answers"></div>
+  </section>
+
+  <!-- CHARTS -->
+  <section class="screen" id="s-charts" hidden>
+    <header class="top"><div><div class="eyebrow">Reference</div><h1>Charts</h1></div></header>
+    <div class="chips" id="c-kind"></div>
+    <div class="chips" id="c-spot"></div>
+    <div class="chart-card">
+      <div class="grid13" id="c-grid"></div>
+      <div class="legend" id="c-legend"></div>
+      <div class="chart-pct" id="c-pct"></div>
+      <p class="note" id="c-note"></p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="screen" id="s-stats" hidden>
+    <header class="top"><div><div class="eyebrow">Progress</div><h1>Stats</h1></div></header>
+    <div class="days" id="t-days"></div>
+    <div id="t-modes"></div>
+    <div class="settings">
+      <div class="section-title">Daily goal</div>
+      <div class="chips" id="t-goal"></div>
+      <button class="text-btn danger" id="t-reset" type="button">Reset all progress</button>
+      <div class="confirm" id="t-confirm" hidden>
+        <p>Delete every score and streak on this phone?</p>
+        <div class="row"><button class="pill" id="t-yes" type="button">Delete</button><button class="pill ghost" id="t-no" type="button">Keep</button></div>
+      </div>
+      <p class="fine" id="t-build"></p>
+    </div>
+  </section>
+
+  <!-- RESULT SHEET -->
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="sheet" id="sheet" aria-live="polite" hidden>
+    <div class="grab"></div>
+    <div class="verdict" id="r-verdict"></div>
+    <div class="reason" id="r-reason"></div>
+    <div class="grid13 mini" id="r-grid"></div>
+    <p class="note" id="r-note"></p>
+    <button class="next-btn" id="r-next" type="button">Next hand</button>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <nav class="tabbar" id="tabbar">
+    <a href="#/" data-t="home"><span class="ti">♠</span>Drills</a>
+    <a href="#/charts" data-t="charts"><span class="ti">▦</span>Charts</a>
+    <a href="#/stats" data-t="stats"><span class="ti">◔</span>Stats</a>
+  </nav>
+</div>
+<script src="drill_engine.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
